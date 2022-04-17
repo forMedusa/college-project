@@ -13,8 +13,14 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 name:any;
+email:any;
+pass:any;
+cpass:any
 
  start(){
    console.log(this.name);
+   console.log(this.email);
+   console.log(this.pass);
+   console.log(this.cpass);
  }
 }
