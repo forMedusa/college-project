@@ -3,21 +3,29 @@
   <div style="width: 50%; margin: auto;"> 
   <h3 style="text-align: center;">Sign Up</h3>
   <div class="label-input"> 
+    <label>Username:</label>
+    <input type="text" [(ngModel)]="data.username" class="form-control"/>
+    </div>
+  <div class="label-input"> 
   <label>Name:</label>
-  <input type="text" [(ngModel)]="name" class="form-control"/>
+  <input type="text" [(ngModel)]="data.name" class="form-control"/>
   </div>
   <div class="label-input"> 
   <label>Email:</label>
-  <input type="email" [(ngModel)]="email" class="form-control"/>
+  <input type="email" [(ngModel)]="data.email" class="form-control"/>
   </div>
   <div class="label-input"> 
   <label>Password:</label>
-  <input type="text" [(ngModel)]="pass" class="form-control"/>
+  <input type="text" [(ngModel)]="data.pass" class="form-control"/>
   </div>
   <div class="label-input"> 
   <label>Confirm Password:</label>
   <input type="text" [(ngModel)]="cpass" class="form-control" >
   </div>
+  <div class="label-input"> 
+    <label>Enter your Institute name:</label>
+    <input type="text" [(ngModel)]="data.institute" class="form-control"/>
+    </div>
   <br>
   <button class="btn btn-primary" (click)="start()" style= "margin-left: 35%;">Sign Up</button>
 </div>

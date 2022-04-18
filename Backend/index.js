@@ -2,7 +2,10 @@ const express= require('express');
 const cors= require('cors');
 const bodyparser= require('body-parser');
 const mysql= require('mysql2');
-
+const e = require('express');
+var coroptions={
+    origin: "http://localhost:4200"
+};
 const app=express();
 
 app.use(cors());
@@ -27,6 +30,32 @@ db.connect(err=>{
     else{
         console.log('Database Connected!');
     }
+})
+
+// POST API
+app.post('/user',(req,res)=>{
+    console.log(req.body,'create data');
+    let uname= req.body.username;
+    let name= req.body.name;
+    let email=req.body.email;
+    let password=req.body.pass;
+    let institute= req.body.institute;
+    // let qr= 'INSERT INTO user(name,email,password,Institute)\n' +
+    // "     VALUES(${name},${email},${password},${institute})"
+    let qr= `INSERT INTO user(username,
+        name,email,password,institute) VALUES('${uname}','${name}','${email}','${password}','${institute}')`;
+
+    db.query(qr,(err,result)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.send({
+                message: "Data Inserted!"
+            });
+        }
+       
+    });
 })
 
 app.listen(3000,()=>{
