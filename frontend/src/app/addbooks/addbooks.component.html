@@ -1,0 +1,81 @@
+<app-navbar></app-navbar>
+<section>
+    <div class="container main-div">
+        <h3>Hierank's Library</h3>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">S.No</th>
+                    <th scope="col">Book Name</th>
+                    <th scope="col">Author's Name</th>
+                    <th scope="col">Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td></td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="float: left;">
+            Add Books to your Library
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Enter the Book Details!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container data-modal">
+                            <div class="label-input">
+                                <label>Book Name:</label>
+                                <input type="text" class="form-control" />
+                            </div>
+
+                            <div class="label-input">
+                                <label>Author Name:</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="label-input">
+                                <label>Book Quantity</label>
+                                <input type="number" [(ngModel)]="addbooks.quantity" class="form-control" />
+                            </div>
+                            <br>
+                            <div *ngFor="let n of output()">
+                                <label>Book Number</label>
+                                <input name="name" name="" id="" style="margin-bottom: 2%;
+                                margin-left: 2%;">
+                              </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

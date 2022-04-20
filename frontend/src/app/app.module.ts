@@ -9,6 +9,11 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { ApiServiceService } from './api-service.service';
+import { AddbooksComponent } from './addbooks/addbooks.component';
+import { StudentsComponent } from './students/students.component';
+import { AllBooksComponent } from './all-books/all-books.component';
+import { IssueReqComponent } from './issue-req/issue-req.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +21,12 @@ import { ApiServiceService } from './api-service.service';
     HomePageComponent,
     NavbarComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    AddbooksComponent,
+    StudentsComponent,
+    AllBooksComponent,
+    IssueReqComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
