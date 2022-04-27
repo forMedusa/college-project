@@ -8,6 +8,7 @@ var coroptions={
     origin: "http://localhost:4200"
 };
 const app=express();
+app.use(express.json());
 
 app.use(cors());
 app.use(bodyparser.json());
@@ -15,17 +16,24 @@ app.use(bodyparser.json());
 const port = process.env.PORT || 8080;
 
 // Database Connection
-mongoose.connect(`mongodb://localhost:27017/college-project`)
-.then(() => {
-  console.log('Connected to database');
-  app.listen(port, () => {
-    console.log(`Express server listening on port ${port}`);
-  });
-});
+mongoose.connect(`mongodb://localhost:27017/college-project`, {useNewUrlParser:true});
 
-// app.listen(3000,()=>{
-//     console.log('server running');
-// })
+mongoose.connection.once('open', () => console.log("Successfully connected to Database!"))
+.on('error', (error) => {
+    console.log('Mongoose Connection Warning!', error);
+});
+// .then(() => {
+//   console.log('Connected to database');
+//   app.listen(port, () => {
+//     console.log(`Express server listening on port ${port}`);
+//   });
+// });
+const user=require('./User/userQueries');
+app.use('api/user',user);
+
+app.listen(4000,()=>{
+    console.log('server running');
+})
 
 
 // Database Connection
