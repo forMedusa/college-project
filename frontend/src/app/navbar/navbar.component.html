@@ -33,9 +33,13 @@
             
             <!-- <button type="button" class="btn btn-outline-danger ms-0 ms-lg-2 p-1" routerLink="/driver-register">Register as
                 Driver</button> -->
+                <div *ngIf="!loggedin">
             <button type="button"  class="btn btn-outline-success mx-2 p-1" routerLink="/login">Login</button>
             <button type="button"  class="btn btn-outline-success mx-2 p-1" routerLink="/signup">Sign Up</button>
-
+                </div>
+                <div *ngIf="loggedin">
+                    <button type="button"  class="btn btn-outline-success mx-2 p-1" routerLink="#" (click)="logout()">Logout</button>
+                </div> 
             <!-- <div class="dropdown" *ngIf="loggedOut">
                 <span class=" me-4" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white;border:none;">
                     <img class="rounded-circle"  id="dropdownMenuButton" id="nav-pic"  src="{{imgUrl}}">

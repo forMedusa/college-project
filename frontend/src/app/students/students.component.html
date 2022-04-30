@@ -7,19 +7,19 @@
             <thead>
                 <tr>
                     <th scope="col">S.No</th>
-                    <th scope="col">Book Name</th>
-                    <th scope="col">Author's Name</th>
-                    <th scope="col">Quantity</th>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">Student's Email</th>
+                    <th scope="col">Book Issued</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
+                <tr *ngFor = "let student of bacchaKaData; let i = index" >
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{student.name}}</td>
+                    <td>{{student.email}}</td>
                     <td>@mdo</td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <th scope="row">2</th>
                     <td>Jacob</td>
                     <td>Thornton</td>
@@ -30,8 +30,11 @@
                     <td>Larry</td>
                     <td></td>
                     <td>@twitter</td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
     </div>
 </section>
+<footer>
+<app-footer></app-footer>
+</footer>

@@ -19,7 +19,8 @@ data={
   name:'',
   email:'',
   pass:'',
-  institute:''
+  institute:'',
+  loggedin:false
 }
  start(){
   this.service.postData(this.data).subscribe(res => {

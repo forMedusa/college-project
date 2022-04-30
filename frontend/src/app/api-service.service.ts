@@ -10,9 +10,20 @@ export class ApiServiceService {
  
   //Connect Frontend with Backend
     
-    apiUrl="http://localhost:3000/user";
-
+    apiUrlforSignupUser="http://localhost:4000/user";
+    apiUrlGetUsers="http://localhost:4000/users";
+    apiUrlGetOneUser="http://localhost:4000/users/"
     postData(data:any):Observable<any>{
-      return this.http.post(this.apiUrl, data);
+      return this.http.post(this.apiUrlforSignupUser, data);
+    }
+    getUsers():Observable<any>{
+      return this.http.get(this.apiUrlGetUsers);
+    }
+    getOneUser(name:any):Observable<any>{
+      console.log(name);
+      return this.http.get(this.apiUrlGetOneUser+name);
+    }
+    updateUserData(id:any,value:any):Observable<any>{
+      return this.http.put(this.apiUrlGetOneUser+id,value);
     }
 }
